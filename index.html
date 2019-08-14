@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+    function Temperature(value)
+    {
+        this.value = value;
+
+
+        this.triSo = function()
+        {   
+            
+            return this.getValue() + " do C";
+        }
+        this.getValue = function()
+        {
+            return this.value;
+        }
+        this.setValue = function(value)
+        {
+            this.value = value;
+        }
+        this.changeToF = function()
+        {
+            return (this.getValue() * 1.8) + 32;
+        }
+        this.changeToKevin = function()
+        {
+            return this.getValue() + 273.15;
+        }
+
+    }
+
+    let temp = new Temperature(25);
+    let valueTemp = temp.triSo();
+    document.write("Nhiet do cua ban la:"+valueTemp+"<br>")
+    document.write("Tuong ung: " + temp.changeToF() +" do F"+"<br>");
+    document.write("Va: "+temp.changeToKevin())
+
+    
+    </script>
+</body>
+</html>
